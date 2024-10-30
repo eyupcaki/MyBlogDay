@@ -13,5 +13,6 @@ namespace MyBlogDayEntityLayer.Concrete
        
         public List<Article> Articles { get; set; }
 
+
     }
 }

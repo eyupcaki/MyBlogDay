@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MyBlogDayEntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace MyBlogDayDataAccessLayer.Context
 {
-    public class SensiveContext :DbContext
+    public class SensiveContext : IdentityDbContext<AppUser, AppRole,int>
+
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
