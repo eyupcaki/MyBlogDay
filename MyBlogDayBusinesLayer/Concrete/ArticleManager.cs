@@ -25,6 +25,7 @@ namespace MyBlogDayBusinesLayer.Concrete
 			throw new NotImplementedException();
 		}
 
+
 		public void TInsert(Article entity)
 		{
 			throw new NotImplementedException();
