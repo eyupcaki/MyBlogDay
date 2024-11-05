@@ -20,9 +20,7 @@ namespace MyBlogDayDataAccessLayer.Repositories
         {
             var value = _context.Set<T>().Find(id);
             _context.Set<T>().Remove(value);
-            _context.SaveChanges();
-    
-            throw new NotImplementedException();
+            _context.SaveChanges();   
         }
 
 
@@ -39,11 +37,13 @@ namespace MyBlogDayDataAccessLayer.Repositories
         public void Insert(T entity)
         {
             _context.Set<T>().Add(entity);
+            _context.SaveChanges();
         }
 
         public void Update(T entity)
         {
             _context.Set<T>().Update(entity);
+            _context.SaveChanges();
         }
     }
 }

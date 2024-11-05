@@ -1,4 +1,7 @@
 ﻿using MyBlogDayBusinesLayer.Abstract;
+using MyBlogDayBusinesLayer.Concrete;
+using MyBlogDayDataAccessLayer.Abstract;
+using MyBlogDayDataAccessLayer.EntityFramework;
 using MyBlogDayEntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,32 +11,48 @@ using System.Threading.Tasks;
 
 namespace MyBlogDayBusinesLayer.Concrete
 {
+
 	public class ArticleManager : IArticleService
 	{
+		private readonly IArticleDal _articleDal;
+
+		public ArticleManager(IArticleDal articleDal)
+		{
+			_articleDal = articleDal;
+		}
+
 		public void TDelete(int id)
 		{
-			throw new NotImplementedException();
+			_articleDal.Delete(id);
 		}
 
 		public List<Article> TGetAll()
 		{
-			throw new NotImplementedException();
+			return _articleDal.GetAll();
 		}
 
 		public Article TGetById(int id)
 		{
-			throw new NotImplementedException();
+			return _articleDal.GetById(id);
 		}
 
 
 		public void TInsert(Article entity)
 		{
-			throw new NotImplementedException();
+			_articleDal.Insert(entity);
 		}
 
 		public void TUpdate(Article entity)
 		{
-			throw new NotImplementedException();
+			if(entity.Description!="" && entity.Title.Length>=5 && entity.Title.Length<=100)
+			{
+				_articleDal.Update(entity);
+			}
+			else
+			{
+				//hata mesajı
+			}
+
 		}
 	}
 }
