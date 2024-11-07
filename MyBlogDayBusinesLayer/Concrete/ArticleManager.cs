@@ -31,6 +31,11 @@ namespace MyBlogDayBusinesLayer.Concrete
 			return _articleDal.GetAll();
 		}
 
+		public List<Article> TArticleListWithCategory()
+		{
+			return _articleDal.ArticleListWithCategory();
+		}
+
 		public Article TGetById(int id)
 		{
 			return _articleDal.GetById(id);
@@ -53,6 +58,11 @@ namespace MyBlogDayBusinesLayer.Concrete
 				//hata mesajı
 			}
 
+		}
+
+		public List<Article> TArticleListWithCategoryAndAppUser()
+		{
+			return _articleDal.ArticleListWithCategoryAndAppUser();
 		}
 	}
 }

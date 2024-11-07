@@ -1,4 +1,5 @@
-﻿using MyBlogDayDataAccessLayer.Abstract;
+﻿using Microsoft.EntityFrameworkCore;
+using MyBlogDayDataAccessLayer.Abstract;
 using MyBlogDayDataAccessLayer.Context;
 using MyBlogDayDataAccessLayer.Repositories;
 using MyBlogDayEntityLayer.Concrete;
@@ -14,6 +15,21 @@ namespace MyBlogDayDataAccessLayer.EntityFramework
 	{
 		public EfArticleDal(SensiveContext context) : base(context)
 		{
+		}
+
+		public List<Article> ArticleListWithCategory()
+		{
+			var context = new SensiveContext();
+			var values=context.Articles.Include(x=>x.Category).ToList();
+			return values;
+
+		}
+
+		public List<Article> ArticleListWithCategoryAndAppUser()
+		{
+			var context = new SensiveContext();
+			var values = context.Articles.Include(x => x.Category).Include(y=>y.AppUser).ToList();
+			return values;
 		}
 	}
 }

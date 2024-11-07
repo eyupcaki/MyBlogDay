@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace MyBlogDayBusinesLayer.Abstract
 {
-	public interface IArticleService : IGenericService<Article>
-	{
-		List<Article> TArticleListWithCategory();
-		List<Article> TArticleListWithCategoryAndAppUser();
-	}
+    public interface IAppUserService : IGenericService<AppUser>
+    {
+
+    }
 }

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace MyBlogDayDataAccessLayer.Abstract
 {
-    public interface IArticleDal : IGenericDal<Article>
+    public interface IAppUserDal:IGenericDal<AppUser>
     {
-        List<Article> ArticleListWithCategory();  
-        List<Article> ArticleListWithCategoryAndAppUser();  
+
     }
 }
