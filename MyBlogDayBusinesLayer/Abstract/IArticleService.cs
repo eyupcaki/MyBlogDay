@@ -11,5 +11,7 @@ namespace MyBlogDayBusinesLayer.Abstract
 	{
 		List<Article> TArticleListWithCategory();
 		List<Article> TArticleListWithCategoryAndAppUser();
-	}
+		public Article TGetLastArticle();
+
+    }
 }
