@@ -15,7 +15,8 @@ namespace MyBlogDay.PresentationLayer.ViewComponents
         public IViewComponentResult Invoke()
         {
             var value = _articleService.TGetLastArticle();
-            return View();
+            return View(value);
         }
+
     }
 }
