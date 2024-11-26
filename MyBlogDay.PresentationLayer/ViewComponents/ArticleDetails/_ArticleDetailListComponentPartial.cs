@@ -14,7 +14,7 @@ namespace MyBlogDay.PresentationLayer.ViewComponents.ArticleDetails
 
         public IViewComponentResult Invoke(int id)
         {
-            id = 7;
+           
             var value = _articleService.TGetById(id);
             return View(value);
         }

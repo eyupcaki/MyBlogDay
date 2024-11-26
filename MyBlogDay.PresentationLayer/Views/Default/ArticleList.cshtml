@@ -11,7 +11,7 @@
 <body>
     <div class="main-container">
         <!-- Blog Listesi -->
-        @await Component.InvokeAsync("_ArticleListComponentPartial")
+        @await Component.InvokeAsync("_ArticleListComponentPartial", new {id=ViewBag.i})
         <!-- Kategori Listesi -->
         @await Component.InvokeAsync("_CategoryListComponentPartial")
         
